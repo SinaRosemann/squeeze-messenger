@@ -5,7 +5,7 @@ module.exports = gql`
     email: String
     createdAt: String!
     token: String
-    imageUrl: String!
+
     latestMessage: Message
   }
   type Message {
@@ -32,5 +32,8 @@ module.exports = gql`
       to: String!
       content: String!
     ): Message!
+  }
+  type Subscription {
+    newMessage: Message!
   }
 `;

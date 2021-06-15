@@ -13,7 +13,8 @@ module.exports = {
        
 
         let users = await User.findAll({
-            attributes: ['username', 'imageUrl', 'createdAt'],
+            attributes: ['username', 'createdAt'],
+          /*   attributes: ['username', 'imageUrl', 'createdAt'], */
             where: { username:  { [Op.ne]: user.username }}
         })
 
