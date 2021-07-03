@@ -1,0 +1,35 @@
+html, body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0px;
+    word-break: break-word;
+    background-color: #fff;
+
+  }
+
+  .container {
+    min-height: 100vh;
+    min-width: 100vw;
+    background-image: url('./images/background.svg');
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+    background-position-x: right;
+  
+  }
+ 
+  /* Typography */
+  a {
+    text-decoration: none;
+    color: #aa89a0;
+  }
+  p {
+    margin: 8px;
+  }
+  
+
+.div--user:hover {
+  background-color: #f7f7f7;
+}
+.MuiButton-contained:hover {
+  background-color:#d2ab9b !important;
+
+}
