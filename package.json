@@ -5,8 +5,7 @@
   "main": "server.js",
   "scripts": {
     "dev": "nodemon server.js --ignore client/",
-    "start": "node server.js",
-    "build": "react-scripts build"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
