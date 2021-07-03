@@ -55,6 +55,7 @@ module.exports = {
           where: { username },
         })
 
+        
         if (!user) {
           errors.username = 'user not found'
           throw new UserInputError('user not found', { errors })
