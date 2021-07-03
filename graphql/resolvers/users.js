@@ -3,7 +3,6 @@ const { UserInputError, AuthenticationError } = require("apollo-server");
 const { Message, User } = require("../../models");
 const jwt = require("jsonwebtoken");
 const { Op } = require('sequelize')
-const { JWT_SECRET } = require("../../config/env.json");
 
 module.exports = {
   Query: {
@@ -68,7 +67,7 @@ module.exports = {
           throw new UserInputError('password is incorrect', { errors })
         }
 
-        const token = jwt.sign({ username }, JWT_SECRET, {
+        const token = jwt.sign({ username }, process.env.JWT_SECRET, {
           expiresIn: 60 * 60,
         })
 
@@ -96,13 +95,7 @@ module.exports = {
         if (confirmPassword.trim() === "")
           errors.confirmPassword = "Confirm Password must not be empty";
 
-        // Check if username / email exists
-        /*        const userByUsername = await User.findOne({ where:  { username }})
-                const userByEmail = await User.findOne({ where:  { email }})
 
-                if(userByUsername) errors.username = 'Username is taken'
-                if(userByEmail) errors.email = 'Email is taken'
- */
         // Check if passwords match
         if (password !== confirmPassword)
           errors.confirmPassword = "Passwords do not match";
